@@ -23,6 +23,9 @@ $dark_braun: #3f0d12;
     background-position: 16% 100%;
     position: relative;
     font-size: 1rem;
+    @media screen and (min-height: 737px) {
+        background-size: 220%;
+    }
     &::before {
         content: "";
         width: 100%;
@@ -279,34 +282,91 @@ $dark_braun: #3f0d12;
     align-items: center;
     z-index: 10;
     color: $cream;
-    padding: 24px 2.5%;
+    padding: 12px 2.5%;
     &__logo {
         font-size: 1.5em;
         font-weight: 700;
     }
-    &__menu_button {
-        display: block;
-        width: 50px;
-        height: 50px;
-        svg {
-            width: 50px;
-            height: 50px;
+}
+
+.header__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $light_green;
+    opacity: 0;
+    &__item {
+        opacity: 0;
+        width: 100%;
+        margin-bottom: 16px;
+        a {
+            display: block;
+            font-size: 2em;
+            width: 100%;
         }
     }
-    &__nav {
-        display: none;
+    &.open {
+        animation: openNav .5s ease forwards;
+        .header__nav__item {
+            animation: openNavItem .5s ease .5s forwards; 
+        }
+    }
+    &.close {
+        opacity: 1;
+        height: 100vh;
+        padding: 100px 60px;
+        animation: openNavReverse .4s ease .4s forwards;
+        .header__nav__item {
+            opacity: 1;
+            animation: openNavItemReverse .4s ease forwards;
+        }
     }
 }
 
-.menu-button {
+.nav-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    z-index: 20;
+    position: fixed;
+    top: 12px;
+    right: 2.5%;
+    svg {
+        width: 50px;
+        height: 50px;
+    }
     &__background {
         stroke: $cream;;
     }
     &__bar {
         fill: $cream;
     }
+    svg .nav-button__bar:nth-of-type(2) {
+        transition: transform .5s ease;
+    }
+    svg .nav-button__bar:nth-of-type(3) {
+        transition: opacity .5s ease;
+    }
+    svg .nav-button__bar:nth-of-type(4) {
+        transition: transform .5s ease;
+    }
 }
 
+.nav-button.open {
+    svg .nav-button__bar:nth-of-type(2) {
+        transform: translate(50%, -10%) rotate(45deg);
+        transition: transform .5s ease;
+    }
+    svg .nav-button__bar:nth-of-type(3) {
+        opacity: 0;
+        transition: opacity .5s ease;
+    }
+    svg .nav-button__bar:nth-of-type(4) {
+        transform: translate(-40%, 47%) rotate(-45deg);
+        transition: transform .5s ease;
+    }
+}
 
 .footer {
     background-color: $dark_green;
@@ -314,4 +374,55 @@ $dark_braun: #3f0d12;
     padding: 8px;
     text-align: center;
     color: $cream;
+}
+
+// アニメーション
+@keyframes openNav {
+    0% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border-radius: 0 0 0 120%;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 60px;
+        border-radius: 0;
+    }
+}
+
+@keyframes openNavReverse {
+    0% {
+        opacity: 1;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 60px;
+        border-radius: 0;
+    }
+    100% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border-radius: 0 0 0 120%;
+    }
+}
+
+@keyframes openNavItem {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes openNavItemReverse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

@@ -17,6 +17,12 @@ body {
   font-size: 1rem;
 }
 
+@media screen and (min-height: 737px) {
+  .p-mv {
+    background-size: 220%;
+  }
+}
+
 .p-mv::before {
   content: "";
   width: 100%;
@@ -303,7 +309,7 @@ body {
           align-items: center;
   z-index: 10;
   color: #feefe5;
-  padding: 24px 2.5%;
+  padding: 12px 2.5%;
 }
 
 .header__logo {
@@ -311,27 +317,115 @@ body {
   font-weight: 700;
 }
 
-.header__menu_button {
+.header__nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #9ea93f;
+  opacity: 0;
+}
+
+.header__nav__item {
+  opacity: 0;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.header__nav__item a {
+  display: block;
+  font-size: 2em;
+  width: 100%;
+}
+
+.header__nav.open {
+  -webkit-animation: openNav .5s ease forwards;
+          animation: openNav .5s ease forwards;
+}
+
+.header__nav.open .header__nav__item {
+  -webkit-animation: openNavItem .5s ease .5s forwards;
+          animation: openNavItem .5s ease .5s forwards;
+}
+
+.header__nav.close {
+  opacity: 1;
+  height: 100vh;
+  padding: 100px 60px;
+  -webkit-animation: openNavReverse .4s ease .4s forwards;
+          animation: openNavReverse .4s ease .4s forwards;
+}
+
+.header__nav.close .header__nav__item {
+  opacity: 1;
+  -webkit-animation: openNavItemReverse .4s ease forwards;
+          animation: openNavItemReverse .4s ease forwards;
+}
+
+.nav-button {
   display: block;
   width: 50px;
   height: 50px;
+  z-index: 20;
+  position: fixed;
+  top: 12px;
+  right: 2.5%;
 }
 
-.header__menu_button svg {
+.nav-button svg {
   width: 50px;
   height: 50px;
 }
 
-.header__nav {
-  display: none;
-}
-
-.menu-button__background {
+.nav-button__background {
   stroke: #feefe5;
 }
 
-.menu-button__bar {
+.nav-button__bar {
   fill: #feefe5;
+}
+
+.nav-button svg .nav-button__bar:nth-of-type(2) {
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+.nav-button svg .nav-button__bar:nth-of-type(3) {
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.nav-button svg .nav-button__bar:nth-of-type(4) {
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+.nav-button.open svg .nav-button__bar:nth-of-type(2) {
+  -webkit-transform: translate(50%, -10%) rotate(45deg);
+          transform: translate(50%, -10%) rotate(45deg);
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+.nav-button.open svg .nav-button__bar:nth-of-type(3) {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.nav-button.open svg .nav-button__bar:nth-of-type(4) {
+  -webkit-transform: translate(-40%, 47%) rotate(-45deg);
+          transform: translate(-40%, 47%) rotate(-45deg);
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
 }
 
 .footer {
@@ -340,5 +434,105 @@ body {
   padding: 8px;
   text-align: center;
   color: #feefe5;
+}
+
+@-webkit-keyframes openNav {
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 0 0 0 120%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 60px;
+    border-radius: 0;
+  }
+}
+
+@keyframes openNav {
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 0 0 0 120%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 60px;
+    border-radius: 0;
+  }
+}
+
+@-webkit-keyframes openNavReverse {
+  0% {
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 60px;
+    border-radius: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 0 0 0 120%;
+  }
+}
+
+@keyframes openNavReverse {
+  0% {
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 60px;
+    border-radius: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 0 0 0 120%;
+  }
+}
+
+@-webkit-keyframes openNavItem {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes openNavItem {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes openNavItemReverse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes openNavItemReverse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

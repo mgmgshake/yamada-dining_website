@@ -23,32 +23,33 @@
     <div class="c-lp">
         <header class="header">
             <h1 class="header__logo">やまだ食堂</h1>
-            <button class="header__menu_button">
+            <button id="js-navButton" class="nav-button">
                 <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 width="50" height="50"
-                viewBox="0,0,1450,1300">
-                    <path class="menu-button__background" fill-rule="evenodd" stroke-width="40px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+                viewBox="-10,0,1450,1300">
+                    <path class="nav-button__background" fill-rule="evenodd" stroke-width="40px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
                     d="M476.772,143.50 C582.4,-36.870 842.40,-36.870 947.272,143.50 L1377.888,879.300 C1484.151,1060.984 1353.116,1289.425 1142.638,1289.425 L281.405,1289.425 C70.927,1289.425 -60.106,1060.984 46.156,879.300 L476.772,143.50 Z"/>
-                    <path class="menu-button__bar" fill-rule="evenodd"
+                    <path class="nav-button__bar" fill-rule="evenodd"
                     d="M362.649,704.12 L1062.649,704.12 L1062.649,764.12 L362.649,764.12 L362.649,704.12 Z"/>
-                    <path class="menu-button__bar" fill-rule="evenodd"
+                    <path class="nav-button__bar" fill-rule="evenodd"
                     d="M362.649,895.12 L1062.649,895.12 L1062.649,955.12 L362.649,955.12 L362.649,895.12 Z"/>
-                    <path class="menu-button__bar" fill-rule="evenodd"
+                    <path class="nav-button__bar" fill-rule="evenodd"
                     d="M362.649,1076.12 L1062.649,1076.12 L1062.649,1136.12 L362.649,1136.12 L362.649,1076.12 Z"/>
                 </svg>
             </button>
             <nav class="header__nav">
                 <ol class="c-list">
-                    <li class="header__nav__item">メニュー</li>
-                    <li class="header__nav__item">当店のこだわり</li>
-                    <li class="header__nav__item">アクセス</li>
+                    <li class="header__nav__item"><a href="#top">トップ</a></li>
+                    <li class="header__nav__item"><a href="#menu">メニュー</a></li>
+                    <li class="header__nav__item"><a href="#kodawari">当店のこだわり</a></li>
+                    <li class="header__nav__item"><a href="#map">アクセス</a></li>
                 </ol>
             </nav>
         </header>
         <main class="main">
-            <div class="p-mv">
+            <div id="top" class="p-mv">
                 <div class="p-mv__content">
                     <h2 class="p-mv__title">
                         <picture>
@@ -61,7 +62,7 @@
                     </p>
                 </div>
             </div>
-            <section class="c-content">
+            <section id="menu" class="c-content">
                 <h2 class="c-content__title">メニュー</h2>
                 <p class="p-content__text">
                     やまだ食堂自慢の定食です。<br>
@@ -156,7 +157,7 @@
                     </li>
                 </ul>
             </section>
-            <section class="c-content">
+            <section id="kodawari" class="c-content">
                 <h2 class="c-content__title">当店のこだわり</h2>
                 <ul>
                     <li class="p-kodawari_list">
@@ -202,7 +203,7 @@
                             <h3 class="p-kodawari_list__title">どこか懐かしい空間</h3>
                             <p class="p-kodawari_list__sub_title">
                                 <img src="images/kodawari.png" alt="こだわり" width="62.5" height="21">
-                                <span>2</span>
+                                <span>3</span>
                             </p>
                             <p class="p-kodawari_list__text">
                                 やまだ食堂は、築50年の古民家を買い取り、リノベーションして生まれた食堂です。<br>
@@ -212,7 +213,7 @@
                     </li>
                 </ul>
             </section>
-            <section class="c-content">
+            <section id="map" class="c-content">
                 <h3 class="c-content__title">アクセス</h3>
                 <div class="p-map">
                     <p class="p-map__image">
@@ -235,5 +236,7 @@
             <p>Copyright © 2021 mgmgshake. All rights reserved.</p>
         </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
