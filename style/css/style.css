@@ -25,7 +25,7 @@ body {
 
 @media screen and (min-height: 737px) {
   .p-mv {
-    background-size: 220%;
+    background-size: cover;
   }
 }
 

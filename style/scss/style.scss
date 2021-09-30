@@ -27,7 +27,7 @@ $dark_braun: #3f0d12;
     position: relative;
     font-size: 1rem;
     @media screen and (min-height: 737px) {
-        background-size: 220%;
+        background-size: cover;
     }
     &::before {
         content: "";
