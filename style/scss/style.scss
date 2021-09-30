@@ -285,7 +285,8 @@ $dark_braun: #3f0d12;
 
 .p-menu_list:nth-of-type(2) {
     .p-menu_list__title {
-        left: 20px;
+        left: auto;
+        right: 104px;
     }
     .p-menu_list__img {
         left: auto;
@@ -607,6 +608,14 @@ $dark_braun: #3f0d12;
             margin: 0;
             & + li {
                 margin-left: 60px;
+            }
+        }
+        &.close {
+            height: auto;
+            padding: 0;
+            animation: none;
+            .header__nav__item {
+                animation: none;
             }
         }
     }
