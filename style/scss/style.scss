@@ -186,7 +186,13 @@ $dark_braun: #3f0d12;
     &__title {
         position: absolute;
         top: -30px;
-        left: 136px;
+        left: calc((100% - 50px)/2 - 2em);
+        width: 60%;
+        max-width: 221px;
+        picture img {
+            width: 100%;
+            height: auto;
+        }
     }
     &__top {
         width: 100%;
@@ -200,14 +206,15 @@ $dark_braun: #3f0d12;
         margin: 0 auto;
     }
     &__img {
-        width: 375px;
+        width: 100%;
+        max-width: 375px;
         position: absolute;
         top: 0;
         left: -50px;
         z-index: 1;
         img {
-            width: 375px;
-            height: 375px;
+            width: 100%;
+            height: auto;
         }
     }
     &__pfc {
@@ -233,6 +240,11 @@ $dark_braun: #3f0d12;
         font-weight: 700;
         small {
             font-size: 0.5em;
+        }
+    }
+    @media screen and (min-width: 376px) {
+        &__title {
+            left: calc((375px - 50px)/2 - 2em);
         }
     }
     @media screen and (min-width: 1025px) {
@@ -282,8 +294,10 @@ $dark_braun: #3f0d12;
 
 .p-menu_list:nth-of-type(2) {
     .p-menu_list__title {
+        width: 65%;
+        max-width: 249px;
         left: auto;
-        right: 104px;
+        right: calc((100% - 50px)/2 - 3.5em);
     }
     .p-menu_list__img {
         left: auto;
@@ -292,6 +306,11 @@ $dark_braun: #3f0d12;
     .p-menu_list__pfc {
         left: 2.5%;
         right: auto;
+    }
+    @media screen and (min-width: 376px) {
+        .p-menu_list__title {
+            right: calc((375px - 50px)/2 - 4em);
+        }
     }
     @media screen and (min-width: 1025px) {
         .p-menu_list__title {
@@ -312,8 +331,14 @@ $dark_braun: #3f0d12;
 
 .p-menu_list:nth-of-type(3) {
     .p-menu_list__title {
-        top: -28px;
-        left: 126px;
+        max-width: 230px;
+        top: -24px;
+        left: calc((100% - 50px)/2 - 2.2em);
+    }
+    @media screen and (min-width: 376px) {
+        .p-menu_list__title {
+            left: calc((375px - 50px)/2 - 2.6em);
+        }
     }
     @media screen and (min-width: 1025px) {
         .p-menu_list__title {
@@ -332,10 +357,13 @@ $dark_braun: #3f0d12;
     margin-top: 76px;
     position: relative;
     &__image {
-        width: 100%;
+        width: 95%;
         text-align: center;
-        margin-bottom: 24px;
+        margin: 0 auto 24px;
         img {
+            width: 100%;
+            height: auto;
+            max-width: 355px;
             vertical-align: bottom;
         }
     }
