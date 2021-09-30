@@ -22,13 +22,10 @@ $dark_braun: #3f0d12;
     height: 100vh;
     background-image: url("../../images/background.jpg");
     background-repeat: no-repeat;
-    background-size: 190%;
+    background-size: cover;
     background-position: 16% 100%;
     position: relative;
     font-size: 1rem;
-    @media screen and (min-height: 737px) {
-        background-size: cover;
-    }
     &::before {
         content: "";
         width: 100%;

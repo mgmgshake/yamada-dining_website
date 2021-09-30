@@ -17,16 +17,10 @@ body {
   height: 100vh;
   background-image: url("../../images/background.jpg");
   background-repeat: no-repeat;
-  background-size: 190%;
+  background-size: cover;
   background-position: 16% 100%;
   position: relative;
   font-size: 1rem;
-}
-
-@media screen and (min-height: 737px) {
-  .p-mv {
-    background-size: cover;
-  }
 }
 
 .p-mv::before {
