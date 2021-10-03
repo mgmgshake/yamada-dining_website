@@ -16,6 +16,8 @@ $light_green: #9ea93f;
 $braun: #cf5c36;
 $dark_braun: #3f0d12;
 
+$pc_max_width: 1440px;
+
 // メインビジュアルのスタイル
 .p-mv {
     width: 100%;
@@ -55,7 +57,8 @@ $dark_braun: #3f0d12;
         background-size: 100%;
         background-position: 40% 52%;
         &__content {
-            width: 1440px;
+            width: 90%;
+            max-width: $pc_max_width;
             margin: 0 auto;
             left: 0;
             right: 0;
@@ -170,8 +173,9 @@ $dark_braun: #3f0d12;
 
 .p-menu {
     @media screen and (min-width: 1025px) {
+        width: 90%;
         min-width: 1000px;
-        max-width: 1440px;
+        max-width: $pc_max_width;
         margin: 0 auto;
     }
 }
@@ -254,31 +258,34 @@ $dark_braun: #3f0d12;
         }
         &__title {
             width: 100%;
+            max-width: 394.5px;
             position: absolute;
             top: -36px;
             left: 0;
             transform: none;
             text-align: center;
             img {
-                width: 394.5px;
+                width: 100%;
                 height: auto;
             }
         }
         &__top {
-            height: calc(460px + 32px);
+            height: calc(28vw + 32px);
+            max-height: calc(460px + 32px);
             margin-bottom: 24px;
         }
         &__bottom {
             width: 100%;
         }
         &__img {
-            width: 460px;
+            width: 100%;
+            max-width: 460px;
             left: 0;
             right: 0;
             margin: 0 auto;
             img {
-                width: 460px;
-                height: 460px;
+                width: 100%;
+                height: auto;
             }
         }
         &__pfc {
@@ -314,6 +321,7 @@ $dark_braun: #3f0d12;
     }
     @media screen and (min-width: 1025px) {
         .p-menu_list__title {
+            width: 100%;
             left: 0;
             img {
                 width: 387px;
@@ -342,6 +350,7 @@ $dark_braun: #3f0d12;
     }
     @media screen and (min-width: 1025px) {
         .p-menu_list__title {
+            width: 100%;
             top: -36px;
             left: 0;
             img {
@@ -406,16 +415,19 @@ $dark_braun: #3f0d12;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1440px;
+        width: 90%;
+        max-width: $pc_max_width;
         margin: 100px auto 0;
         &__image {
             margin: 0;
             img {
                 width: 100%;
+                max-width: none;
                 height: auto;
             }
         }
         &__detail {
+            width: calc(100% - 46% - 40px);
             display: grid;
             grid-template-rows: 2em 1fr;
             grid-template-columns: 86px 1fr;
@@ -462,31 +474,25 @@ $dark_braun: #3f0d12;
         }
         &:first-child {
             .p-kodawari_list__image {
-                margin-left: -97px;
-                width: 673px;
-            }
-            .p-kodawari_list__detail {
-                width: calc(100% - 673px - 40px);
+                margin-left: -3%;
+                width: 46%;
+                max-width: 673px;
             }
         }
         &:nth-child(2) {
             .p-kodawari_list__image {
                 order: 2;
-                margin-right: -48px;
-                width: 632px;
+                margin-right: -3%;
+                max-width: 632px;
             }
             .p-kodawari_list__detail {
                 order: 1;
-                width: calc(100% - 632px - 40px);
             }
         }
         &:last-child {
             .p-kodawari_list__image {
-                margin-left: -64px;
-                width: 634px;
-            }
-            .p-kodawari_list__detail {
-                width: calc(100% - 634px - 40px);
+                margin-left: -3%;
+                max-width: 634px;
             }
         }
     }
@@ -541,7 +547,8 @@ $dark_braun: #3f0d12;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        max-width: 1440px;
+        width: 90%;
+        max-width: $pc_max_width;
         margin: 80px auto 0;
         &__image {
             width: 50%;
@@ -580,7 +587,8 @@ $dark_braun: #3f0d12;
         font-weight: 700;
     }
     @media screen and (min-width: 1025px) {
-        width: 1440px;
+        width: 90%;
+        max-width: $pc_max_width;
         right: 0;
         padding: 40px 0 0;
         margin: 0 auto;
