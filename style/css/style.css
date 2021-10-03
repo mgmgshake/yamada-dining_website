@@ -65,7 +65,6 @@ body {
 
 @media screen and (min-width: 1025px) {
   .p-mv {
-    background-size: 100%;
     background-position: 40% 52%;
   }
   .p-mv__content {
@@ -157,22 +156,16 @@ body {
     font-size: 3.5em;
   }
   .c-content__title::before, .c-content__title::after {
-    width: 300px;
+    width: calc(50% - (1em * 4)/2 - 120px);
   }
   .c-content__title::before {
-    left: calc(50% - 300px - 2em - 60px);
+    left: 5%;
   }
   .c-content__title::after {
-    right: calc(50% - 300px - 2em - 60px);
+    right: 5%;
   }
   .c-content:nth-of-type(2) .c-content__title::before, .c-content:nth-of-type(2) .c-content__title::after {
-    width: 300px;
-  }
-  .c-content:nth-of-type(2) .c-content__title::before {
-    left: calc(50% - 300px - 3.5em - 60px);
-  }
-  .c-content:nth-of-type(2) .c-content__title::after {
-    right: calc(50% - 300px - 3.5em - 60px);
+    width: calc(50% - (1em * 7)/2 - 120px);
   }
 }
 
@@ -204,7 +197,6 @@ body {
 @media screen and (min-width: 1025px) {
   .p-menu {
     width: 90%;
-    min-width: 1000px;
     max-width: 1440px;
     margin: 0 auto;
   }
@@ -539,6 +531,7 @@ body {
     margin: 100px auto 0;
   }
   .p-kodawari_list__image {
+    width: 46%;
     margin: 0;
   }
   .p-kodawari_list__image img {
@@ -607,7 +600,6 @@ body {
   }
   .p-kodawari_list:first-child .p-kodawari_list__image {
     margin-left: -3%;
-    width: 46%;
     max-width: 673px;
   }
   .p-kodawari_list:nth-child(2) .p-kodawari_list__image {
@@ -710,7 +702,8 @@ body {
     margin: 0;
   }
   .p-map__text {
-    width: 40%;
+    width: 48%;
+    margin: 0;
   }
   .p-map__text span + span {
     font-size: 1em;
@@ -839,6 +832,12 @@ body {
   .header__nav.close .header__nav__item {
     -webkit-animation: none;
             animation: none;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .header__nav__item + li {
+    margin-left: 20px;
   }
 }
 

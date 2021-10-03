@@ -80,7 +80,6 @@ body {
         }
     }
     @include mq(pc) {
-        background-size: 100%;
         background-position: 40% 52%;
         &__content {
             width: 90%;
@@ -168,25 +167,19 @@ body {
         &__title {
             font-size: 3.5em;
             &::before, &::after {
-                width: 300px;
+                width: calc(50% - (1em * 4)/2 - 120px);
             }
             &::before {
-                left: calc(50% - 300px - 2em - 60px);
+                left: 5%;
             }
             &::after {
-                right: calc(50% - 300px - 2em - 60px);
+                right: 5%;
             }
         }
         &:nth-of-type(2) .c-content__title {
             // 「当店のこだわり」のタイトルレイアウト
             &::before, &::after {
-                width: 300px;
-            }
-            &::before {
-                left: calc(50% - 300px - 3.5em - 60px);
-            }
-            &::after {
-                right: calc(50% - 300px - 3.5em - 60px);
+                width: calc(50% - (1em * 7)/2 - 120px);
             }
         }
     }
@@ -214,7 +207,6 @@ body {
 .p-menu {
     @include mq(pc) {
         width: 90%;
-        min-width: 1000px;
         max-width: $pc_max_width;
         margin: 0 auto;
     }
@@ -505,6 +497,7 @@ body {
         max-width: $pc_max_width;
         margin: 100px auto 0;
         &__image {
+            width: 46%;
             margin: 0;
             img {
                 width: 100%;
@@ -561,7 +554,6 @@ body {
         &:first-child {
             .p-kodawari_list__image {
                 margin-left: -3%;
-                width: 46%;
                 max-width: 673px;
             }
         }
@@ -648,7 +640,8 @@ body {
             margin: 0;
         }
         &__text {
-            width: 40%;
+            width: 48%;
+            margin: 0;
             span + span {
                 font-size: 1em;
                 margin: 16px auto 60px;
@@ -744,6 +737,13 @@ body {
             animation: none;
             .header__nav__item {
                 animation: none;
+            }
+        }
+    }
+    @media screen and (max-width: 1220px) {
+        &__item {
+            & + li {
+                margin-left: 20px;
             }
         }
     }
