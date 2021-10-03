@@ -1,14 +1,3 @@
-body {
-    font-weight: 400;
-    font-family: fot-tsukuardgothic-std, sans-serif;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.7;
-    @media screen and (min-width: 1025px) {
-        font-size: 16px;
-    }
-}
-
 // 色の定義
 $cream: #feefe5;
 $dark_green: #14281d;
@@ -17,6 +6,31 @@ $braun: #cf5c36;
 $dark_braun: #3f0d12;
 
 $pc_max_width: 1440px;
+
+// ブレイクポイント用の定数
+$breakpoints: (
+  'tablet': 'screen and (min-width: 600px)',
+  'pc': 'screen and (min-width: 1025px)'
+) !default;
+
+// メディアクエリのmixin
+@mixin mq($breakpoint: pc) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+}
+
+body {
+    font-weight: 400;
+    font-family: fot-tsukuardgothic-std, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    @include mq(pc) {
+        font-size: 16px;
+    }
+}
+
 
 // メインビジュアルのスタイル
 .p-mv {
@@ -53,7 +67,19 @@ $pc_max_width: 1440px;
         font-size: 0.75em;
         letter-spacing: -0.04em;
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        &__content {
+            top: calc(50% - 120px);
+        }
+        &__title {
+            picture img {
+                width: 100%;
+                max-width: 613px;
+                height: auto;
+            }
+        }
+    }
+    @include mq(pc) {
         background-size: 100%;
         background-position: 40% 52%;
         &__content {
@@ -119,7 +145,21 @@ $pc_max_width: 1440px;
             width: calc(50% - ((1em * 7)/2 + 32px));
         }
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        &__title {
+            &::before, &::after {
+                width: calc(50% - ((1em * 4)/2 + 60px));
+            }
+        }
+        &:nth-of-type(2) {
+            // 「当店のこだわり」のタイトルレイアウト
+            .c-content__title::before,
+            .c-content__title::after {
+                width: calc(50% - ((1em * 7)/2 + 60px));
+            }
+        }
+    }
+    @include mq(pc) {
         padding: 240px 0;
         font-size: 16px;
         &:nth-of-type(1) {
@@ -163,7 +203,7 @@ $pc_max_width: 1440px;
     margin: 32px auto 80px;
     font-size: 1em;
     text-align: center;
-    @media screen and (min-width: 1025px) {
+    @include mq(pc) {
         margin: 40px auto 112px;
         br:nth-of-type(2n+1) {
             display: none;
@@ -172,7 +212,7 @@ $pc_max_width: 1440px;
 }
 
 .p-menu {
-    @media screen and (min-width: 1025px) {
+    @include mq(pc) {
         width: 90%;
         min-width: 1000px;
         max-width: $pc_max_width;
@@ -251,14 +291,35 @@ $pc_max_width: 1440px;
             left: calc((375px - 50px)/2 - 2em);
         }
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        width: 80%;
+        margin: 0 auto;
+        & + li {
+            margin-top: 32px;
+        }
+        &__title {
+            left: 50%;
+        }
+        &__img {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        &__pfc {
+            width: fit-content;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+    @include mq(pc) {
         width: calc((100% - 32px * 2)/3);
         & + li {
             margin: 0 0 0 32px;
         }
         &__title {
             width: 100%;
-            max-width: 394.5px;
+            max-width: unset;
             position: absolute;
             top: -36px;
             left: 0;
@@ -266,6 +327,7 @@ $pc_max_width: 1440px;
             text-align: center;
             img {
                 width: 100%;
+                max-width: 394.5px;
                 height: auto;
             }
         }
@@ -319,13 +381,26 @@ $pc_max_width: 1440px;
             right: calc((375px - 50px)/2 - 4em);
         }
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        .p-menu_list__title {
+            right: 46%;
+        }
+        .p-menu_list__img {
+            left: 0;
+            right: 0;
+        }
+        .p-menu_list__pfc {
+            left: 0;
+            right: 0;
+        }
+    }
+    @include mq(pc) {
         .p-menu_list__title {
             width: 100%;
+            max-width: unset;
             left: 0;
             img {
-                width: 387px;
-                height: auto;
+                max-width: 387px;
             }
         }
         .p-menu_list__img {
@@ -348,14 +423,21 @@ $pc_max_width: 1440px;
             left: calc((375px - 50px)/2 - 2.6em);
         }
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        .p-menu_list__title {
+            top: -28px;
+            left: 48%;
+        }
+
+    }
+    @include mq(pc) {
         .p-menu_list__title {
             width: 100%;
+            max-width: unset;
             top: -36px;
             left: 0;
             img {
-                width: 409px;
-                height: auto;
+                max-width: 409px;
             }
         }
     }
@@ -411,7 +493,11 @@ $pc_max_width: 1440px;
             text-align: center;
         }
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        width: 80%;
+        margin: 76px auto 0;
+    }
+    @include mq(pc) {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -542,7 +628,13 @@ $pc_max_width: 1440px;
             right: 28px;
         }
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        &__link {
+            width: fit-content;
+            padding: 28px 80px;
+        }
+    }
+    @include mq(pc) {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -586,15 +678,18 @@ $pc_max_width: 1440px;
         font-size: 1.5em;
         font-weight: 700;
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        padding: 24px 2.5%;
+        &__logo {
+            font-size: 3em;
+        }
+    }
+    @include mq(pc) {
         width: 90%;
         max-width: $pc_max_width;
         right: 0;
         padding: 40px 0 0;
         margin: 0 auto;
-        &__logo {
-            font-size: 3em;
-        }
     }
 }
 
@@ -631,7 +726,7 @@ $pc_max_width: 1440px;
             animation: openNavItemReverse .4s ease forwards;
         }
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(pc) {
         position: relative;
         opacity: 1;
         background-color: transparent;
@@ -681,7 +776,15 @@ $pc_max_width: 1440px;
     svg .nav-button__bar:nth-of-type(4) {
         transition: transform .5s ease;
     }
-    @media screen and (min-width: 1025px) {
+    @include mq(tablet) {
+        width: 80px;
+        height: 80px;
+        svg {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    @include mq(pc) {
         display: none;
     }
 }

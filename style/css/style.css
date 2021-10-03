@@ -52,6 +52,17 @@ body {
   letter-spacing: -0.04em;
 }
 
+@media screen and (min-width: 600px) {
+  .p-mv__content {
+    top: calc(50% - 120px);
+  }
+  .p-mv__title picture img {
+    width: 100%;
+    max-width: 613px;
+    height: auto;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .p-mv {
     background-size: 100%;
@@ -122,6 +133,16 @@ body {
 .c-content:nth-of-type(2) .c-content__title::before,
 .c-content:nth-of-type(2) .c-content__title::after {
   width: calc(50% - ((1em * 7)/2 + 32px));
+}
+
+@media screen and (min-width: 600px) {
+  .c-content__title::before, .c-content__title::after {
+    width: calc(50% - ((1em * 4)/2 + 60px));
+  }
+  .c-content:nth-of-type(2) .c-content__title::before,
+  .c-content:nth-of-type(2) .c-content__title::after {
+    width: calc(50% - ((1em * 7)/2 + 60px));
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -274,6 +295,32 @@ body {
   }
 }
 
+@media screen and (min-width: 600px) {
+  .p-menu_list {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .p-menu_list + li {
+    margin-top: 32px;
+  }
+  .p-menu_list__title {
+    left: 50%;
+  }
+  .p-menu_list__img {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .p-menu_list__pfc {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .p-menu_list {
     width: calc((100% - 32px * 2)/3);
@@ -283,7 +330,7 @@ body {
   }
   .p-menu_list__title {
     width: 100%;
-    max-width: 394.5px;
+    max-width: unset;
     position: absolute;
     top: -36px;
     left: 0;
@@ -293,6 +340,7 @@ body {
   }
   .p-menu_list__title img {
     width: 100%;
+    max-width: 394.5px;
     height: auto;
   }
   .p-menu_list__top {
@@ -347,14 +395,28 @@ body {
   }
 }
 
+@media screen and (min-width: 600px) {
+  .p-menu_list:nth-of-type(2) .p-menu_list__title {
+    right: 46%;
+  }
+  .p-menu_list:nth-of-type(2) .p-menu_list__img {
+    left: 0;
+    right: 0;
+  }
+  .p-menu_list:nth-of-type(2) .p-menu_list__pfc {
+    left: 0;
+    right: 0;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .p-menu_list:nth-of-type(2) .p-menu_list__title {
     width: 100%;
+    max-width: unset;
     left: 0;
   }
   .p-menu_list:nth-of-type(2) .p-menu_list__title img {
-    width: 387px;
-    height: auto;
+    max-width: 387px;
   }
   .p-menu_list:nth-of-type(2) .p-menu_list__img {
     right: 0;
@@ -376,15 +438,22 @@ body {
   }
 }
 
+@media screen and (min-width: 600px) {
+  .p-menu_list:nth-of-type(3) .p-menu_list__title {
+    top: -28px;
+    left: 48%;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .p-menu_list:nth-of-type(3) .p-menu_list__title {
     width: 100%;
+    max-width: unset;
     top: -36px;
     left: 0;
   }
   .p-menu_list:nth-of-type(3) .p-menu_list__title img {
-    width: 409px;
-    height: auto;
+    max-width: 409px;
   }
 }
 
@@ -445,6 +514,13 @@ body {
   border-radius: 50%;
   border: 1px solid #feefe5;
   text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .p-kodawari_list {
+    width: 80%;
+    margin: 76px auto 0;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -602,6 +678,15 @@ body {
   right: 28px;
 }
 
+@media screen and (min-width: 600px) {
+  .p-map__link {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 28px 80px;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .p-map {
     display: -webkit-box;
@@ -665,6 +750,15 @@ body {
   font-weight: 700;
 }
 
+@media screen and (min-width: 600px) {
+  .header {
+    padding: 24px 2.5%;
+  }
+  .header__logo {
+    font-size: 3em;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .header {
     width: 90%;
@@ -672,9 +766,6 @@ body {
     right: 0;
     padding: 40px 0 0;
     margin: 0 auto;
-  }
-  .header__logo {
-    font-size: 3em;
   }
 }
 
@@ -791,6 +882,17 @@ body {
   transition: -webkit-transform .5s ease;
   transition: transform .5s ease;
   transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+@media screen and (min-width: 600px) {
+  .nav-button {
+    width: 80px;
+    height: 80px;
+  }
+  .nav-button svg {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @media screen and (min-width: 1025px) {
