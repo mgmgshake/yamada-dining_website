@@ -622,16 +622,16 @@ body {
 
 .p-map__image {
   width: 90%;
-  height: 200px;
+  height: 500px;
   text-align: center;
   color: #feefe5;
   background: #cf5c36;
   margin: 60px auto 48px;
 }
 
-.p-map__image img {
+.p-map__image iframe {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .p-map__text {

@@ -579,14 +579,14 @@ body {
 .p-map {
     &__image {
         width: 90%;
-        height: 200px;
+        height: 500px;
         text-align: center;
         color: $cream;
         background: $braun;
         margin: 60px auto 48px;
-        img {
+        iframe {
             width: 100%;
-            height: auto;
+            height: 100%;
         }
     }
     &__text {
