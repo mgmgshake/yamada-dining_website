@@ -763,12 +763,13 @@ body {
 }
 
 .header__nav {
+  display: none;
+  opacity: 0;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 10;
   background-color: #9ea93f;
-  opacity: 0;
 }
 
 .header__nav__item {
@@ -784,27 +785,32 @@ body {
 }
 
 .header__nav.open {
+  display: block;
+  opacity: 1;
   -webkit-animation: openNav .5s ease forwards;
           animation: openNav .5s ease forwards;
 }
 
 .header__nav.open .header__nav__item {
+  display: block;
+  opacity: 1;
   -webkit-animation: openNavItem .5s ease .5s forwards;
           animation: openNavItem .5s ease .5s forwards;
 }
 
 .header__nav.close {
+  display: block;
   opacity: 1;
+  width: 100%;
   height: 100vh;
   padding: 100px 60px;
-  -webkit-animation: openNavReverse .4s ease .4s forwards;
-          animation: openNavReverse .4s ease .4s forwards;
+  -webkit-animation: openNavReverse .4s ease .1s forwards;
+          animation: openNavReverse .4s ease .1s forwards;
 }
 
 .header__nav.close .header__nav__item {
-  opacity: 1;
-  -webkit-animation: openNavItemReverse .4s ease forwards;
-          animation: openNavItemReverse .4s ease forwards;
+  display: none;
+  opacity: 0;
 }
 
 @media screen and (min-width: 1025px) {
@@ -835,7 +841,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (min-width: 1025px) and (max-width: 1220px) {
   .header__nav__item + li {
     margin-left: 20px;
   }
@@ -934,6 +940,11 @@ body {
 
 @-webkit-keyframes openNav {
   0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
     opacity: 0;
     width: 0;
     height: 0;
@@ -950,6 +961,11 @@ body {
 
 @keyframes openNav {
   0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
     opacity: 0;
     width: 0;
     height: 0;
@@ -966,69 +982,73 @@ body {
 
 @-webkit-keyframes openNavReverse {
   0% {
+    display: block;
     opacity: 1;
     width: 100%;
     height: 100vh;
     padding: 100px 60px;
     border-radius: 0;
   }
-  100% {
+  99% {
     opacity: 0;
     width: 0;
     height: 0;
     border-radius: 0 0 0 120%;
+  }
+  100% {
+    display: none;
+    opacity: 0;
   }
 }
 
 @keyframes openNavReverse {
   0% {
+    display: block;
     opacity: 1;
     width: 100%;
     height: 100vh;
     padding: 100px 60px;
     border-radius: 0;
   }
-  100% {
+  99% {
     opacity: 0;
     width: 0;
     height: 0;
     border-radius: 0 0 0 120%;
   }
+  100% {
+    display: none;
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes openNavItem {
   0% {
+    display: none;
     opacity: 0;
   }
+  1% {
+    display: block;
+    opacity: 1;
+  }
   100% {
+    display: block;
     opacity: 1;
   }
 }
 
 @keyframes openNavItem {
   0% {
+    display: none;
     opacity: 0;
   }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes openNavItemReverse {
-  0% {
+  1% {
+    display: block;
     opacity: 1;
   }
   100% {
-    opacity: 0;
-  }
-}
-
-@keyframes openNavItemReverse {
-  0% {
+    display: block;
     opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

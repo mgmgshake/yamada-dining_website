@@ -687,12 +687,13 @@ body {
 }
 
 .header__nav {
+    display: none;
+    opacity: 0;
     position: fixed;
     top: 0;
     right: 0;
     z-index: 10;
     background-color: $light_green;
-    opacity: 0;
     &__item {
         opacity: 0;
         width: 100%;
@@ -704,19 +705,25 @@ body {
         }
     }
     &.open {
+        display: block;
+        opacity: 1;
         animation: openNav .5s ease forwards;
         .header__nav__item {
-            animation: openNavItem .5s ease .5s forwards; 
+            display: block;
+            opacity: 1;
+            animation: openNavItem .5s ease .5s forwards;
         }
     }
     &.close {
+        display: block;
         opacity: 1;
+        width: 100%;
         height: 100vh;
         padding: 100px 60px;
-        animation: openNavReverse .4s ease .4s forwards;
+        animation: openNavReverse .4s ease .1s forwards;
         .header__nav__item {
-            opacity: 1;
-            animation: openNavItemReverse .4s ease forwards;
+            display: none;
+            opacity: 0;
         }
     }
     @include mq(pc) {
@@ -739,11 +746,11 @@ body {
                 animation: none;
             }
         }
-    }
-    @media screen and (max-width: 1220px) {
-        &__item {
-            & + li {
-                margin-left: 20px;
+        @media screen and (max-width: 1220px) {
+            &__item {
+                & + li {
+                    margin-left: 20px;
+                }
             }
         }
     }
@@ -815,6 +822,11 @@ body {
 // アニメーション
 @keyframes openNav {
     0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
         opacity: 0;
         width: 0;
         height: 0;
@@ -831,34 +843,36 @@ body {
 
 @keyframes openNavReverse {
     0% {
+        display: block;
         opacity: 1;
         width: 100%;
         height: 100vh;
         padding: 100px 60px;
         border-radius: 0;
     }
-    100% {
+    99% {
         opacity: 0;
         width: 0;
         height: 0;
         border-radius: 0 0 0 120%;
     }
+    100% {
+        display: none;
+        opacity: 0;
+    }
 }
 
 @keyframes openNavItem {
     0% {
+        display: none;
         opacity: 0;
     }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes openNavItemReverse {
-    0% {
+    1% {
+        display: block;
         opacity: 1;
     }
     100% {
-        opacity: 0;
+        display: block;
+        opacity: 1;
     }
 }
