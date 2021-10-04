@@ -18,11 +18,16 @@ $(function(){
         $(".header__nav").removeClass("open")
         $(".header__nav").addClass("close")
         // 指定箇所までスクロール
-        var speed = 500;
-        var href= $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top;
-        $("html, body").delay(400).animate({scrollTop:position}, speed, "swing");
-        return false;
+        var speed = 500
+        var href= $(this).attr("href")
+        var target = $(href == "#" || href == "" ? 'html' : href)
+        var position = target.offset().top
+        $("html, body").delay(400).animate({scrollTop:position}, speed, "swing")
+        return false
       });
+
+    $('#mapButton').click(function() {
+        alert('架空のサイトなので、マップはありません。ごめんなさい！')
+        return false
+    })
 })
