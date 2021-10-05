@@ -162,10 +162,10 @@ body {
         }
     }
     @include mq(pc) {
-        padding: 240px 0;
+        padding: 40px 0 200px;
         font-size: 16px;
         &:nth-of-type(1) {
-            padding: 240px 0;
+            padding: 120px 0 200px;
         }
         &__title {
             font-size: 3.5em;
@@ -744,10 +744,14 @@ body {
             }
         }
         &.close {
+            display: block;
+            width: auto;
             height: auto;
             padding: 0;
             animation: none;
             .header__nav__item {
+                display: block;
+                opacity: 1;
                 animation: none;
             }
         }
