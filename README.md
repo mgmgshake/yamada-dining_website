@@ -6,5 +6,5 @@
 ## 表示確認方法
 
 github pagesにて公開しています。  
-https://shakexxmmm.github.io/yamada-dining_website/  
+https://mgmgshake.github.io/yamada-dining_website/
 
